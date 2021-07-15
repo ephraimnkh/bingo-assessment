@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HumanPlayer()
+comment1.params=
+comment1.target=void\ chooseNumbers()
+comment2.params=number
+comment2.target=void\ checkForNumber(int)
+comment3.params=
+comment3.target=void\ printRemaining()
+comment4.params=
+comment4.target=boolean\ checkIfWon()
+numComments=5

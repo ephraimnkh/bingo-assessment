@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Announcer()
+comment1.params=
+comment1.target=void\ chooseNextNumber()
+comment2.params=p
+comment2.target=void\ addNewPlayer(Player)
+comment3.params=number
+comment3.target=void\ announceNextNumber(int)
+numComments=4

@@ -1,0 +1,78 @@
+//----------------------------------- Week 5 Provided classes --------------------------------------
+// The purpose of this class is to represent a Bingo Game-Card. It provides a mechanism
+// to manage the 'marking-off' of 4 digits.
+//
+// When creating a BingoCard, you must provide the 4 numbers to be 'on' the card.
+//
+// To mark off a number, use the 'markOff' method.
+// To check whether all numbers are marked off, use the 'areAllMarkedOff' method.
+// To get a String that shows which numbers remain, use the 'getRemaining' method.
+public class BingoCard
+{
+    private int[] numbers; // The numbers to be marked off
+    private boolean[] markedOff; // Whether the corresponding position has been marked off yet
+	private int max = 4; // Reports the maximum number of values needed to be printed out by getRemaining() 4 is default or first max when round starts
+	private int printed;// Says how many numbers have been printed for a player
+    // been marked off yet
+    public BingoCard(int first, int second, int third, int fourth)
+    {
+        numbers = new int[4];
+        markedOff = new boolean[4];
+        numbers[0] = first;
+        numbers[1] = second;
+        numbers[2] = third;
+        numbers[3] = fourth;
+        markedOff[0] = false;
+        markedOff[1] = false;
+        markedOff[2] = false;
+        markedOff[3] = false;
+    }
+    // Method: markOff
+    // Passed: number - a number to check for amongst the four in this card.
+    // Purpose: Each of the numbers that make up this card are checked. If any match the
+    // parameter, then the 'markedOff' value is set to true.
+    public void markOff(int number)
+    {
+        int position;
+        for (position = 0; position < 4; position++)
+        {
+            if (numbers[position] == number)
+            {
+                if (!markedOff[position])
+					max--;// Decrease maximum number of numbers needed to be printed everytime a number marked off
+				markedOff[position] = true;
+            }
+        }
+    }
+    // Method: areAllMarkedOff
+    // Purpose: To check whether all numbers on this card are marked off. If any are not
+    // marked off, then false is returned. If all are marked off, true is returned.
+    public boolean areAllMarkedOff()
+    {
+        int position;
+        for (position = 0; position < 4; position++)
+            if (markedOff[position] == false)
+            	return false;
+        // If we get here, it is because we went through the whole loop without
+        // finding 'false'.
+        return true;
+    }
+    // Purpose: Returns a string listing the numbers which remain (not yet marked off).
+    public String getRemaining()
+    {
+        String result = "";
+        int position; 
+		printed = 1; // set to one everytime method starts so that when needing to print the last number it results in printed equaling max so last number is printed with no comma
+        for (position = 0; position < 4; position++)
+        {
+			if (!markedOff[position] && printed != max)
+            {
+				result += numbers[position] + ", ";
+				printed++;
+            }
+			else if (!markedOff[position] && printed == max)
+				result += numbers[position];
+        }
+        return result;
+    }
+}

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=number
+comment0.target=void\ checkForNumber(int)
+comment1.params=
+comment1.target=void\ chooseNumbers()
+comment2.params=
+comment2.target=void\ printRemaining()
+comment3.params=
+comment3.target=boolean\ checkIfWon()
+numComments=4

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=first\ second\ third\ fourth
+comment0.target=BingoCard(int,\ int,\ int,\ int)
+comment1.params=number
+comment1.target=void\ markOff(int)
+comment2.params=
+comment2.target=boolean\ areAllMarkedOff()
+comment3.params=
+comment3.target=java.lang.String\ getRemaining()
+numComments=4
